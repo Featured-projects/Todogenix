@@ -6,8 +6,6 @@ import firebase from "../firebase";
 
 const PracticeContext = createContext();
 
-
-
 const currentUserId = localStorage.getItem('userUid'); 
 
 const ContextPractice = (props) => {
@@ -17,7 +15,6 @@ const [type, setType] = useState('explorer');
 
 const handleType = (type) => {
   setType(type);
-  console.log("hilo1",type)
 }
 
 console.log("hilo2",type)

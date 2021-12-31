@@ -32,6 +32,10 @@ const ListItem = (props) => {
   //     title:title,
   //    });
   // }
+
+  function Capitalize(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+    };
   
 
   return (
@@ -43,7 +47,7 @@ const ListItem = (props) => {
         inputProps={{ "aria-label": "controlled" }}
       />
       <div className="todo-list-div">
-      <h3 style={{textDecoration:`${props.todo.completed?'line-through':''}`,textDecorationThickness:'3px'}} >{parseInt(props.todoNum) +1}. {props.todo.title || props.todo.todotask}</h3>
+      <h3 style={{textDecoration:`${props.todo.completed?'line-through':''}`,textDecorationThickness:'3px'}} >{parseInt(props.todoNum) +1}. {Capitalize(props.todo.title || props.todo.todotask)}</h3>
       {
         props.type !== 'explorer'? <p>Due: {props.todo.time} {props.todo.date} {props.todo.duration} hr</p>:null
       }
